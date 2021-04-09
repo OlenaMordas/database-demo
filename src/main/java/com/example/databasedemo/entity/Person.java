@@ -9,6 +9,19 @@ public class Person {
     private String location;
     private Date date;
 
+    @Override
+    public String toString() {
+        return "\nPerson{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", date=" + date +
+                '}';
+    }
+
+    public Person() {
+    }
+
     public int getId() {
         return id;
     }
