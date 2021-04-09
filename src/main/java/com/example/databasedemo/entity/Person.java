@@ -7,7 +7,7 @@ public class Person {
     private int id;
     private String name;
     private String location;
-    private Date date;
+    private Date birthDate;
 
     @Override
     public String toString() {
@@ -15,7 +15,7 @@ public class Person {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
-                ", date=" + date +
+                ", date=" + birthDate +
                 '}';
     }
 
@@ -46,18 +46,18 @@ public class Person {
         this.location = location;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public Person(int id, String name, String location, Date date) {
+    public Person(int id, String name, String location, Date birthDate) {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.date = date;
+        this.birthDate = birthDate;
     }
 }
