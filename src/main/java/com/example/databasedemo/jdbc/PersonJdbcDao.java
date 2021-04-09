@@ -29,21 +29,20 @@ public class PersonJdbcDao {
 
     public int deleteById(int id) {
         return jdbcTemplate.update(
-                "delete from person where id=?",
-                new Object[] {id});
+                "delete from person where id=?", id);
     }
 
     public int insertPerson(Person person) {
         return jdbcTemplate.update(
                 "insert into person (id, name, location, birth_date) values (?, ?, ?, ?)",
-                new Object[] {person.getId(), person.getName(), person.getLocation(),
-                        new Timestamp(person.getBirthDate().getTime())});
+                person.getId(), person.getName(), person.getLocation(),
+                new Timestamp(person.getBirthDate().getTime()));
     }
 
     public int updatePerson(Person person) {
         return jdbcTemplate.update(
                 "update person set name =?, location=?, birth_date=? where id=? ",
-                new Object[] {person.getName(), person.getLocation(),
-                        new Timestamp(person.getBirthDate().getTime()), person.getId()});
+                person.getName(), person.getLocation(),
+                new Timestamp(person.getBirthDate().getTime()), person.getId());
     }
 }
