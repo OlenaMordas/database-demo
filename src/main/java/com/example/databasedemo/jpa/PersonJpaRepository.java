@@ -18,4 +18,13 @@ public class PersonJpaRepository {
     public Person findById(int id) {
         return entityManager.find(Person.class, id);
     }
+
+    public Person update(Person person){
+        return entityManager.merge(person);
+    }
+
+    public void deleteById(int id){
+        entityManager.remove(findById(id));
+    }
+
 }
