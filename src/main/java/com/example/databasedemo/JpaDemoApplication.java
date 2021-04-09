@@ -25,12 +25,13 @@ public class JpaDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//		logger.info("All users {} ", personJdbcDao.findAll());
+		logger.info("All users {} ", repository.findAll());
 		logger.info("User id 10001 => {} ", repository.findById(10001));
 		repository.deleteById(10002);
 		logger.info("Inserting => {} ",
 				repository.update(new Person(10004, "John Doe", "Zurich", new Date())));
 		logger.info("Updated => {} ",
 				repository.update(new Person(10003, "Anna Fox", "Ostin", new Date())));
+		logger.info("All users {} ", repository.findAll());
 	}
 }
