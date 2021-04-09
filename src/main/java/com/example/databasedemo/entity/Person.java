@@ -1,10 +1,17 @@
 package com.example.databasedemo.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "person")
 public class Person {
 
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column
     private String name;
     private String location;
     private Date birthDate;
